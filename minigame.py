@@ -10,7 +10,7 @@ def klickerspiel():
     punktelabel = tk.Label(fenster, textvariable=punktzahl, font=(Gothic, 14))
     punktelabel.pack(pady=20)
 
-    def klick()
+    def klick():
         punktzahl.set(punktzahl.get() + 1)
 
     klickbutton = tk.Button(fenster, text='Klickerhero', command=klick, font=(Gothic, 14))
