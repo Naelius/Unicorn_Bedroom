@@ -1,3 +1,12 @@
+import tkinter as tk
+from tkinter import ttk, messagebox, anzeige, Toplevel
+from tkinter import filedialog
+from PIL import Image, ImageTk, ImageSequence
+import threading
+import random
+import time
+import pygame
+
 class App:
     def __init__(self,  root):
         self.root = root
