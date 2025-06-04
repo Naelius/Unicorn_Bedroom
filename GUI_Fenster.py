@@ -1,5 +1,5 @@
 import tkinter as tk
-from buttonsaktion import button_action, gif_button
+from buttonsaktion import button_action, gif_button, spiel_button
 
 def create_mainwindow():
     #hauptfenster machen 
@@ -17,7 +17,7 @@ def create_mainwindow():
 
 
 #lambda funktion einfach als fake funktion 
-    funktionen = [ lambda: button_action(1), lambda: button_action(2), lambda: button_action(3), lambda: button_action(4), lambda: button_action(5), gif_button]
+    funktionen = [ lambda: button_action(1), lambda: button_action(2), lambda: button_action(3), lambda: button_action(4), spiel_button, gif_button]
 
 
 
