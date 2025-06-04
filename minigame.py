@@ -19,7 +19,7 @@ def klickerspiel():
     def klick():
         punktzahl.set(punktzahl.get() + 1)
 
-    klickbutton = tk.Button(fenster, text='Klickerhero', command=klick, font=('Gothic', 14))
+    klickbutton = tk.Button(fenster, text='Klickerhero', command=klick, font=('Gothic', 14), state='disabled')
     klickbutton.pack(pady=10)
 
     def countdown():
