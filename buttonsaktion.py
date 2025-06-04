@@ -18,24 +18,27 @@ def button2_action():
     fenster = Toplevel()
     fenster.title("Neues Fenster")
     fenster.geometry("200x100")
-    Label(fenster, text="Hallo! Neues Fenster geöffnet.", font=('Gothic', 12)).pack(pady=20)
+    Label(fenster, text="Hallo! Mich gefunden du hast!", font=('Gothic', 12)).pack(pady=20)
 
 # Button 3: Setzt Variable zurück und zeigt Messagebox
-def button3_action():
+def button3_action(label):
     global zaehlvariable
     play_click_sound()
     zaehlvariable = 0
     messagebox.showinfo("Button 3", "Variable wurde zurückgesetzt!")
+    label.config(text='Zahl zurückgesetzt! jetzt 0')
 
 # Button 4: Startet Timer, der in Konsole runterzählt (oder kann angepasst werden)
-def button4_action():
+def button4_action(timer_label):
     play_click_sound()
 
-    def timer():
-        for i in range(5, 0, -1):
-            print(f"Timer läuft: {i} Sekunden")
-            time.sleep(1)
-        print("Timer beendet!")
+    def timer(remaining=5):
+        if remaining > 0:
+            timer_label.config(text=F'Tick Tack {remaining} Sekunden übrig!')
+            timer_label.after(1000, timer, remaining - 1 )  # 1000 ms = 0.1 Sekunde
+        else:
+            timer_label.config(text='Timer abgelaufen!')
+            messagebox.showinfo("Timer", "Die Zeit ist abgelaufen!")
 
     threading.Thread(target=timer).start()
 #versuch eine definition für die action
