@@ -17,9 +17,9 @@ def gifwindow():
 
     def animate(counter):
         # Nächsten Frame des GIFs anzeigen
-        frame = ImageTk.PhotoImage(gif.copy())
-        label.config(image=frame[counter])
-        label.image = frame[counter]
+        frame = frames[counter]
+        label.config(image=frame)
+        label.image = frame
         counter = (counter + 1) % gif.n_frames
         fenster.after(100, lambda: animate(counter))
     animate(0)  # Animation starten
