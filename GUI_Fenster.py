@@ -1,10 +1,12 @@
 import tkinter as tk
 from buttonsaktion import button_action, gif_button, spiel_button
+from menue import add_menue
 
 def create_mainwindow():
     #hauptfenster machen 
 
     root = tk.Tk()
+    add_menue(root)  # Menüleiste hinzufügen
     root.title('Button Anwendung')
     root.geometry('600x600')
     root.configure(bg='lightgray')
