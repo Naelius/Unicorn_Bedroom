@@ -1,5 +1,7 @@
 import tkinter as tk
 from buttonsaktion import button_action, gif_button, spiel_button
+from buttonsaktion import button1_action, button2_action, button3_action, button4_action
+
 from menue import add_menue
 
 def create_mainwindow():
@@ -19,7 +21,7 @@ def create_mainwindow():
 
 
 #lambda funktion einfach als fake funktion 
-    funktionen = [ lambda: button_action(1), lambda: button_action(2), lambda: button_action(3), lambda: button_action(4), spiel_button, gif_button]
+    funktionen = [ lambda: button1_action(status_label),  button2_action, button3_action, button4_action, spiel_button, gif_button]
 
 
 
