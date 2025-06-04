@@ -12,11 +12,14 @@ def gifwindow():
     label = tk.Label(fenster)
     label.pack(expand=True)
 
+    #alle frames vorbereiten
+    frames = [ImageTk.PhotoImage(frame.copy()) for frame in ImageSequence.Iterator(gif)]
+
     def animate(counter):
         # Nächsten Frame des GIFs anzeigen
         frame = ImageTk.PhotoImage(gif.copy())
-        label.config(image=frame)
-        label.image = frame
+        label.config(image=frame[counter])
+        label.image = frame[counter]
         counter = (counter + 1) % gif.n_frames
         fenster.after(100, lambda: animate(counter))
     animate(0)  # Animation starten
